@@ -1,11 +1,15 @@
+use std::io;
+
 fn main() {
  
-    let plain_text = String::from("ATTACKATONCE");
+   let key = 14;
 
-    let key = 4;
+    println!("Please enter the text to be encrypted");
+    let mut plain_text = String::new();
+    io::stdin().read_line(&mut plain_text).expect("Failed to read line");
 
-    let chars:Vec<char> = plain_text.chars().collect();
-
+    let mut chars:Vec<char> = plain_text.chars().collect();
+    chars.pop();
     let mut encrypt = String::new();
     for element in chars.iter() {
         let char = element;
@@ -19,6 +23,6 @@ fn main() {
         encrypt.push(shifted);
     }
     
-    println!("Plaintest is {}", plain_text);
+    println!("Plaintext is {}", plain_text);
     println!("Encrypted String is {}", encrypt);
 }
