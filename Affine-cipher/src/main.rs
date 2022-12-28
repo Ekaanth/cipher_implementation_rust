@@ -1,6 +1,6 @@
 fn main() {
 
-    let plain_text = String::from("TFFINE CIPHER");
+    let plain_text = String::from("AFFINE CIPHER");
 
     let a = 17;
 
@@ -12,22 +12,22 @@ fn main() {
 
     let mut encryption = String::new();
 
-    let chars:Vec<char> = plain_text.chars().collect(); 
+    let chars = plain_text.chars(); 
 
-    for element in chars.iter() {
+    for element in chars {
         println!("{}",element);
 
         if element.eq_ignore_ascii_case(&' ') {
-            encryption.push(*element);
+            encryption.push(element);
         }else {
 
             let base = if element.is_ascii_lowercase() {
-                *element as u8
+                element as u32
             } else {
-                *element as u8
+                element as u32
             };
 
-            let enc = (((a * (base - 'A' as u8) + b) % 26) + 'A' as u8) as char;
+            let enc = (((a as u32 * (base - 'A' as u32) as u32 + b as u32) % 26) as u8 + 'A' as u8) as char;
             encryption.push(enc);
         }
     }
