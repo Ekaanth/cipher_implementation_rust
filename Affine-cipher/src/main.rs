@@ -1,37 +1,35 @@
-fn main() {
-
-    let plain_text = String::from("AFFINE CIPHER");
-
-    let a = 17;
-
-    let b = 20;
-
     // Affine cipher: has two keys a and b 
     // we can represent encryption as a*X+b mod 26
     // we can represent decryption as a(inverse)*(y-b) mod 26
 
-    let mut encryption = String::new();
+fn affine_cipher(text: &str, a: u8, b: u8) -> String {
+    let mut result = String::new();
 
-    let chars = plain_text.chars(); 
-
-    for element in chars {
-        println!("{}",element);
-
-        if element.eq_ignore_ascii_case(&' ') {
-            encryption.push(element);
-        }else {
-
-            let base = if element.is_ascii_lowercase() {
-                element as u32
+    for c in text.chars() {
+        if c.is_ascii_alphabetic() {
+            let base = if c.is_ascii_lowercase() {
+                'a' as u8
             } else {
-                element as u32
+                'A' as u8
             };
 
-            let enc = (((a as u32 * (base - 'A' as u32) as u32 + b as u32) % 26) as u8 + 'A' as u8) as char;
-            encryption.push(enc);
+            let x = c as u8 - base;
+            let y = ((a as u32 * x as u32 + b as u32) % 26) as u8;
+            result.push((y + base) as char);
+        } else {
+            result.push(c);
         }
     }
 
-    println!("Plaintext is {}", plain_text);
-    println!("Encrypted String is {}", encryption);
+    result
+}
+
+fn main() {
+    let original = "Hello, World!";
+    let encrypted = affine_cipher(original, 5, 8);
+    let decrypted = affine_cipher(&encrypted, 21, 18);
+
+    println!("Original message: {}", original);
+    println!("Encrypted message: {}", encrypted);
+    println!("Decrypted message: {}", decrypted);
 }
