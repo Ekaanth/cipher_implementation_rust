@@ -1,41 +1,62 @@
 use ndarray::{Array2, Array};
 
-fn hill_cipher(message : &String, key: &String) {
-    println!("{}", message);
-    println!("{}", key);
-    let keys_numeric: Vec<i32> = key.chars().map(|c| c as i32 - 'A' as i32).collect();
-    let message_numeric: Vec<i32> = message.chars().map(|c| c as i32 - 'A' as i32).collect();
-    println!("{:?}", keys_numeric);
-    println!("{:?}", message_numeric);
-
-    let mut key_blocks = Vec::new();
-    for i in (0..keys_numeric.len()).step_by(message_numeric.len()) {
-        key_blocks.push(&keys_numeric[i..i+message_numeric.len()]);
+fn get_key_matrix(key: &String, key_matrix: &mut Array2<i32>){
+    let mut k = 0;
+    for i in 0..3 {
+        for j in 0..3 {
+            key_matrix[(i, j)] = (key.as_bytes()[k] as i32) % 65;
+            k+=1;
+        }
     }
-
-    let mut message_blocks = Vec::new();
-    for i in (0..message_numeric.len()).step_by(message_numeric.len()) {
-        message_blocks.push(&message_numeric[i..i+message_numeric.len()]);
-    }
-    
-    let mut key_matrix: Array2<i32> = Array::zeros((message_numeric.len(), message_numeric.len()));
-    let mut message_matrix: Array2<i32> = Array::zeros((message_numeric.len(), 1));
-
-    for i in 0..key_blocks.len() {
-            for j in 0..key_blocks[i].len() {
-                // println!("{}", key_blocks[i][j]);
-                key_matrix[(i, j)] = key_blocks[i][j];
-            }
-    }
-
-    println!("{:?}", key_matrix.dot(&key_matrix));
-
 }
 
 
+fn hill_cipher_encryption(message : &String, key: &String) -> String{
+
+    let mut key_matrix: Array2<i32> = Array::zeros((message.len(), message.len()));
+    
+    // create an key matrix
+    get_key_matrix(key, &mut key_matrix);
+
+    // create an empty message matrix
+    let mut message_matrix: Array2<i32> = Array::zeros((message.len(), 1));
+
+    for i in 0..3 {
+        message_matrix[(i, 0)] = message.as_bytes()[i] as i32 % 65;
+    }
+
+    // Dot vector of 3 matrix 3*3 and 3*1 matrix
+    let mut encrypt = key_matrix.dot(&message_matrix) % 26;
+    encrypt = encrypt+65;
+
+    let mut enc_string = String::new();
+
+    for i in 0..encrypt.len() {
+        enc_string.push(encrypt[(i,0)] as u8 as char);
+    };
+
+    enc_string
+}
+
+fn hill_cipher_decryption(encrypted: &String, key: &String) -> String {
+    let mut plain_text = String::new();
+
+    let mut key_matrix: Array2<i32> = Array::zeros((encrypted.len(), encrypted.len()));
+    
+    // create an key matrix
+    get_key_matrix(key, &mut key_matrix);
+
+
+    plain_text
+}
 
 fn main() {
     let message = String::from("ACT");
     let key = String::from("GYBNQKURP");
-    hill_cipher(&message, &key);
+
+    let encrypted_message = hill_cipher_encryption(&message, &key);
+
+    println!("The encrypted message for the text {} with the key of {} is: {}", message, key, encrypted_message);
+
+    let decrypted_message = hill_cipher_decryption(&encrypted_message, &key);
 }
