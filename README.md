@@ -19,13 +19,13 @@ List of ciphers I will be implementing are:
     *Implementation*
      <pre>
      key       =  CRYPTOCRYPTOCRYPT
-     mmessage  =  WHATANICEDAYTODAY
-     --------------------------------
+     mmessage  =  WHATANICEDAYTODAY 
+     -------------------------------- + mod 26
      encrypt   =  ZZZJUCLUDTUNWGCQS
-     --------------------------------
+     -------------------------------- 
      encrypt   =  ZZZJUCLUDTUNWGCQS
      key       =  CRYPTOCRYPTOCRYPT
-     --------------------------------
+     -------------------------------- + mod 26
      message   =  WHATANICEDAYTODAY
      </pre>
 Please feel free to open an issue if you would like to implement a new cipher and can submit a PR.
