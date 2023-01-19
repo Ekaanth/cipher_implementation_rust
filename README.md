@@ -29,4 +29,11 @@ List of ciphers I will be implementing are:
      -------------------------------- - mod 26
      message   =  WHATANICEDAYTODAY
      </pre>
+     
+ - [ ] Roter machines cipher (1870-1943)
+       It consists of a key with which a letter mapping was done, Initally the roter was mapped with the key but with each keystroke,
+       the key map also roated making it slighly difficult, In cases when an user types `c` for three times the encryption will yeld 3 
+       different characters thus making it slightly harder to crack, These improvised and then they become multi-roter the infamomous 
+       *`Enigma`* is an example for Router machine cipher.
+       
 Please feel free to open an issue if you would like to implement a new cipher and can submit a PR.
