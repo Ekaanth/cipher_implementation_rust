@@ -36,4 +36,5 @@ List of ciphers I will be implementing are:
        different characters thus making it slightly harder to crack, These improvised and then they become multi-roter the infamomous 
        *`Enigma`* is an example for Router machine cipher.
        
-Please feel free to open an issue if you would like to implement a new cipher and can submit a PR.
+Please feel free to open an issue if you would like to implement a new cipher. and can submit a PR.
+Make pr of you would like to add more
