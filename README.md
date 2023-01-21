@@ -37,4 +37,4 @@ List of ciphers I will be implementing are:
        *`Enigma`* is an example for Router machine cipher.
        
 Please feel free to open an issue if you would like to implement a new cipher. and can submit a PR.
-Make pr of you would like to add more
+
