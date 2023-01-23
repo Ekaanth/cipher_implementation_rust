@@ -8,7 +8,7 @@ List of ciphers I will be implementing are:
 - [x] Caesar Cipher
 - [x] Keyword Cipher
 - [x] Affine Cipher
-- [ ] Vigener Cipher (16th century, Rome)
+- [x] Vigener Cipher (16th century, Rome)
       It is an cipher that was being developed by an Roman by named Vigener, IN this cipher we have a key(K) and a message (M) when encrypting
       we replicate key length to the length of the message and add then together with mod 26. Similarly, you do the same with the decryption only
       in this case you _substract_ with mod 26
@@ -18,7 +18,7 @@ List of ciphers I will be implementing are:
   _Implementation_
      <pre>
      key       =  CRYPTOCRYPTOCRYPT
-     message  =  WHATANICEDAYTODAY 
+     message   =  WHATANICEDAYTODAY 
      -------------------------------- + mod 26
      encrypt   =  ZZZJUCLUDTUNWGCQS
      -------------------------------- 
