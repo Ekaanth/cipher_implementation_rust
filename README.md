@@ -8,8 +8,23 @@ List of ciphers I will be implementing are:
 - [x] Caesar Cipher
 - [x] Keyword Cipher
 - [x] Affine Cipher
+      The affine cipher is a type of monoalphabetic substitution cipher,which has 2 keys. Let us consider Key 1(a) and key 2 (b) and plaintext(x)
+      when encrypting we use `a*X+b mod 26` to encrypt the message. While we can use `a(inverse)*(y-b) mod 26` to decrypt the encrypted message
+
+  > Ex:
+
+      Key = Hello, World!
+      Key 1 = 5
+      key 2 = 8
+
+  _Implementation_
+    <pre>
+        encryption = Rclla, Oaplx!
+        
+    </pre>
+
 - [x] Vigener Cipher (16th century, Rome)
-      It is an cipher that was being developed by an Roman by named Vigener, IN this cipher we have a key(K) and a message (M) when encrypting
+      It is an cipher that was being developed by an Roman by named Vigener, In this cipher we have a key(K) and a message (M) when encrypting
       we replicate key length to the length of the message and add then together with mod 26. Similarly, you do the same with the decryption only
       in this case you _substract_ with mod 26
   > Ex:
