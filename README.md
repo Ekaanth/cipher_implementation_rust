@@ -6,7 +6,20 @@ List of ciphers I will be implementing are:
 - [ ] Playfair
 - [x] Hill Cipher
 - [x] Caesar Cipher
-- [x] Keyword Cipher
+- [x] Keyword Cipher: Keyword cipher is a form of monoalphabetic substitution. A keyword is used as the key, and it
+      determines the letter matchings of the cipher alphabet to the plain alphabet. Repeats of letters in the word are
+      removed, then the cipher alphabet is generated with the keyword matching to A, B, C, etc. until the keyword is
+      used up, whereupon the rest of the ciphertext letters are used in alphabetical order, excluding those already used in the key.
+
+  > Ex:
+
+        To create a substitution alphabet from a keyword, you first write down the alphabet. Below this you write down the keyword (omitting duplicate letters) followed by the remaining unused letters of the alphabet.
+
+        <pre>
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        KEYWORDABCFGHIJLMNPQSTUVXZ
+        </pre>
+
 - [x] Affine Cipher
       The affine cipher is a type of monoalphabetic substitution cipher,which has 2 keys. Let us consider Key 1(a) and key 2 (b) and plaintext(x)
       when encrypting we use `a*X+b mod 26` to encrypt the message. While we can use `a(inverse)*(y-b) mod 26` to decrypt the encrypted message
