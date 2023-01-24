@@ -13,40 +13,25 @@ List of ciphers I will be implementing are:
 
   _Implementation_
 
-        To create a substitution alphabet from a keyword, you first write down the alphabet.
-        Below this you write down the keyword (omitting duplicate letters) followed by the remaining unused letters of the alphabet.
+  To create a substitution alphabet from a keyword, you first write down the alphabet.
+  Below this you write down the keyword (omitting duplicate letters) followed by the remaining unused letters of the alphabet
 
-     <pre>
         ABCDEFGHIJKLMNOPQRSTUVWXYZ
         KEYWORDABCFGHIJLMNPQSTUVXZ
-    </pre>
 
-  To encipher a plaintext message, you convert all letters from the top row to their correspondng letter on the bottom row (A to K, B to E, etc).
+  To encipher a plaintext message, you convert all letters from the top row to their corresponding letter on the bottom row (A to K, B to E, etc).
 
-  > Ex:
+  > Ex: plaintext = "Hello world" keyword = "secret"
 
-    <pre>
-    plaintext  = "Hello world"
-    keyword    = "secret"
-  
-    encrypted  = "dtiil wloir"
-    </pre>
+  > encrypted = "dtiil wloir"
 
 - [x] Affine Cipher
       The affine cipher is a type of monoalphabetic substitution cipher,which has 2 keys. Let us consider Key 1(a) and key 2 (b) and plaintext(x)
       when encrypting we use `a*X+b mod 26` to encrypt the message. While we can use `a(inverse)*(y-b) mod 26` to decrypt the encrypted message
 
-  > Ex:
+  > Ex: Key = Hello, World!, Key 1 = 5, key 2 = 8
 
-      Key = Hello, World!
-      Key 1 = 5
-      key 2 = 8
-
-  _Implementation_
-    <pre>
-        encryption = Rclla, Oaplx!
-        
-    </pre>
+  > encryption = Rclla, Oaplx!
 
 - [x] Vigener Cipher (16th century, Rome)
       It is an cipher that was being developed by an Roman by named Vigener, In this cipher we have a key(K) and a message (M) when encrypting
