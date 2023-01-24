@@ -5,7 +5,14 @@ List of ciphers I will be implementing are:
 
 - [ ] Playfair
 - [x] Hill Cipher
-- [x] Caesar Cipher
+- [x] Caesar Cipher : A Caesar Cipher is one of the most simple and easily cracked encryption methods. It is a Substitution Cipher that involves replacing each letter of the secret message with a different letter of the alphabet which is a fixed number of positions further in the alphabet.
+
+> Example : each letter in the plaintext message has been shifted 3 letters down in the alphabet.
+
+> Plaintext: This is a secret message
+
+> Ciphertext: wklv lv d vhfuhw phvvdjh
+
 - [x] Keyword Cipher: Keyword cipher is a form of monoalphabetic substitution. A keyword is used as the key, and it
       determines the letter matchings of the cipher alphabet to the plain alphabet. Repeats of letters in the word are
       removed, then the cipher alphabet is generated with the keyword matching to A, B, C, etc. until the keyword is
