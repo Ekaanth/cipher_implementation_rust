@@ -11,14 +11,26 @@ List of ciphers I will be implementing are:
       removed, then the cipher alphabet is generated with the keyword matching to A, B, C, etc. until the keyword is
       used up, whereupon the rest of the ciphertext letters are used in alphabetical order, excluding those already used in the key.
 
-  > Ex:
+  _Implementation_
 
-        To create a substitution alphabet from a keyword, you first write down the alphabet. Below this you write down the keyword (omitting duplicate letters) followed by the remaining unused letters of the alphabet.
+        To create a substitution alphabet from a keyword, you first write down the alphabet.
+        Below this you write down the keyword (omitting duplicate letters) followed by the remaining unused letters of the alphabet.
 
-        <pre>
+     <pre>
         ABCDEFGHIJKLMNOPQRSTUVWXYZ
         KEYWORDABCFGHIJLMNPQSTUVXZ
-        </pre>
+    </pre>
+
+  To encipher a plaintext message, you convert all letters from the top row to their correspondng letter on the bottom row (A to K, B to E, etc).
+
+  > Ex:
+
+    <pre>
+    plaintext  = "Hello world"
+    keyword    = "secret"
+  
+    encrypted  = "dtiil wloir"
+    </pre>
 
 - [x] Affine Cipher
       The affine cipher is a type of monoalphabetic substitution cipher,which has 2 keys. Let us consider Key 1(a) and key 2 (b) and plaintext(x)
