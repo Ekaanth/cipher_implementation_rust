@@ -40,13 +40,13 @@ fn otp_decryption(encrypted: &String, key: &String) -> String {
         let enc_char = encrypted.chars().nth(i).unwrap() as u8 - 64;
         let key_char= key.chars().nth(i).unwrap() as u8 - 64;
 
-        let mut diff = key_char - enc_char ;
+        let mut diff = enc_char  as i32 - key_char  as i32;
 
         if diff.lt(&0) {
             diff = diff + 26
         }
 
-        let res_char = (((diff + 1 as u8).rem_euclid(26)) + 64 ) as char;
+        let res_char = ((((diff + 1 ) % 24 ) + 64) as u8 ) as char;
         result.push(res_char);
     }
     result
