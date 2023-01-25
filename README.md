@@ -65,4 +65,21 @@ List of ciphers I will be implementing are:
       different characters thus making it slightly harder to crack, These improvised and then they become multi-roter the infamous
       _`Enigma`_ is an example for Router machine cipher.
 
+- [ ] One time pad cipher : The one-time pad is a long sequence of random letters. These letters are
+      combined with the plaintext message to produce the ciphertext. To decipher the message, a person
+      must have a copy of the one-time pad to reverse the process. A one-time pad should be used
+      only once (hence the name) and then destroyed. This is the first and only encryption algorithm
+      that has been proven to be unbreakable.
+
+_Implementation_
+
+Given any plaintext we have generate one time key randomly and that key is same as the length of plaintext, The plaintext is encrypted using the one time pad and the same one time pad is shared to use it to decode the information.
+
+<pre>
+Example:
+plaintext    : SECRETMESSAGE
+one-time pad : CIJTHUUHMLFRU
+ciphertext   : UMLKLNGLEDFXY
+</pre>
+
 Please feel free to open an issue if you would like to implement a new cipher. and can submit a PR.
