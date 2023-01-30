@@ -82,7 +82,7 @@ one-time pad : CIJTHUUHMLFRU
 ciphertext   : UMLKLNGLEDFXY
 </pre>
 
-[ ] Atbash Cipher: The Atbash cipher is a very specific case of a substitution cipher where the letters of the alphabet are reversed. In otherwords, all As are replaced with Zs, all Bs are replaced with Ys, and so on.
+- [X] Atbash Cipher: The Atbash cipher is a very specific case of a substitution cipher where the letters of the alphabet are reversed. In otherwords, all As are replaced with Zs, all Bs are replaced with Ys, and so on.
 Because reversing the alphabet twice will get you actual alphabet, you can encipher and decipher a message using the exact same algorithm.
 
 > Example
