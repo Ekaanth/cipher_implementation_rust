@@ -3,7 +3,6 @@
 Project contains the rust implementation's of all the cryptography methods I learn.
 List of ciphers I will be implementing are:
 
-- [ ] Playfair
 - [x] Hill Cipher
 - [x] Caesar Cipher : A Caesar Cipher is one of the most simple and easily cracked encryption methods. It is a Substitution Cipher that involves replacing each letter of the secret message with a different letter of the alphabet which is a fixed number of positions further in the alphabet.
 
